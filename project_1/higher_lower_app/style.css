@@ -1,10 +1,37 @@
+* {
+  border: 1px solid gold;
+}
 body {
+  margin: 0;
+}
+.header{
+  height:20vh;
+  width:100vw;
+  margin: 0;
+}
+.game-screen {
+  margin: 0;
+  height:60vh;
+  width:100vw;
   background-image: url('imgs/poker-table-background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.scores {
+  margin:0;
+  height:20vh;
+  width:100vw;
 }
 
 h1 {
   font-size: 40px;
   text-align: center;
+}
+
+.card {
+  height: 50vh;
+  align-self: center;
 }
