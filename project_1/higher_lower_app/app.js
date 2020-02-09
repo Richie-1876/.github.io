@@ -2,6 +2,24 @@
 // console.log($);
 
 $(() => {
+  // modal variables =====================
+  const $openBtn = $('#openModal');
+  const $modal = $('#modal');
+  const $closeBtn = $('#close')
+
+  // modal event handles =================
+  const openModal = () => {
+    $modal.css('display', 'block');
+  }
+
+  const closeModal = () => {
+    $modal.css('display', 'none');
+  }
+
+  // modal event listeners =================
+  $openBtn.on('click', openModal);
+  $closeBtn.on('click', closeModal);
+
   // ajax request from shuffled deck for 2 cards
   $.ajax({
     url: 'https://deckofcardsapi.com/api/deck/new/draw/?count=2'

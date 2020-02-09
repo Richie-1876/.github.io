@@ -4,6 +4,50 @@
 body {
   margin: 0;
 }
+/* Modal styling ======================= */
+
+#modal {
+  background-color: rgba(0,0,0,.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+  display: none;
+}
+
+#modal-buttons {
+  padding: 16px 20px;
+  background-color: blue;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* modal textbox ========================= */
+
+#modal-textbox {
+  background-image: url('imgs/poker-game-background.jpg');
+  background-size: cover;
+  color: white;
+  height: 350px;
+  width: 550px;
+  border-radius: 4px;
+  margin: 150px auto;
+  box-shadow: 0 4px 4px rgba(0,0,0,.2)
+  padding: 10%;
+  line-height: 120%;
+
+}
+
+#modal-footer {
+  text-align: right;
+}
+
 .header{
   height:10vh;
   width:100vw;
