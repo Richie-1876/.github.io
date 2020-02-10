@@ -55,7 +55,7 @@ body {
 }
 .game-screen {
   margin: 0;
-  height:60vh;
+  height:65vh;
   width:100vw;
   background-image: url('imgs/poker-table-background.jpg');
   background-size: cover;
@@ -77,8 +77,9 @@ body {
 }
 .scores {
   margin:0;
-  height:20vh;
+  height:15vh;
   width:100vw;
+  background-color: white;
 }
 
 h1 {
