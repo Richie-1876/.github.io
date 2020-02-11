@@ -1,8 +1,9 @@
-* {
+/* * {
   border: 1px solid gold;
-}
+} */
 body {
   margin: 0;
+  background-image: url('imgs/poker-table-background.jpg');
 }
 /* Modal styling ======================= */
 
@@ -52,12 +53,17 @@ body {
   height:10vh;
   width:100vw;
   margin: 0;
+  background-color: inherit;
+}
+.main {
+  display: flex;
+  flex-direction: column;
 }
 .game-screen {
   margin: 0;
   height:65vh;
   width:100vw;
-  background-image: url('imgs/poker-table-background.jpg');
+  background-color: inherit;
   background-size: cover;
   background-repeat: no-repeat;
   display:flex;
@@ -67,27 +73,58 @@ body {
 .button-container {
   display:flex;
   flex-direction: row;
-  justify-content: center;
-  height: 10vh;
-  width: 100vw;
+  justify-content: space-around;
+
+  height: 15vh;
+  width: 20vw;
+  margin:auto;
+}
+.card {
+  height: 40vh;
+  width:30vw;
+  align-self: center;
 }
 .button {
   margin: 10px;
-  padding: 10px 30px;
+  padding: 5px 5px;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: blue;
+  color: white;
+  box-shadow: 5px 10px black;
 }
 .scores {
+  position:absolute;
   margin:0;
-  height:15vh;
+  height:10vh;
   width:100vw;
-  background-color: white;
+  background-color: black;
+  color: white;
+  font-weight:bold;
+  margin-top: 1vw;
 }
 
 h1 {
   font-size: 40px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
-.card {
-  height: 50vh;
-  align-self: center;
+
+
+@media (min-width: 550px) {
+.main {
+
+  flex-direction: row;
+}
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
+    height: 15vh;
+    width: 20vw;
+    margin:auto;
+  }
 }

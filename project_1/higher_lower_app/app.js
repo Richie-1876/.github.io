@@ -100,7 +100,7 @@ const deck = $.ajax({
         // check if higher function ==============================
         const checkIfHigher = () => {
           $('.hidden-card').attr('src', cardsInPlay[1].image)
-          if (cardsInPlay[0].value > cardsInPlay[1].value) {
+          if (cardsInPlay[0].value < cardsInPlay[1].value) {
             console.log('You won');
             correct++;
             $('#user-score').text(`Your score: ${correct}`);
@@ -111,7 +111,7 @@ const deck = $.ajax({
 
 
 
-          } else if (cardsInPlay[0].value < cardsInPlay[1].value) {
+          } else if (cardsInPlay[0].value > cardsInPlay[1].value) {
             console.log('You lost');
             wrong++;
             $('#computer-score').text(`Computer score: ${wrong}`);
@@ -129,13 +129,13 @@ const deck = $.ajax({
         // check if lower function ==============================
         const checkIfLower = () => {
           $('.hidden-card').attr('src', cardsInPlay[1].image)
-          if (cardsInPlay[0].value < cardsInPlay[1].value) {
+          if (cardsInPlay[0].value > cardsInPlay[1].value) {
             console.log('You won');
             correct++;
             $('#user-score').text(`Your score: ${correct}`);
             cardsInPlay.pop()
             cardsInPlay.pop()
-          } else if (cardsInPlay[0].value > cardsInPlay[1].value) {
+          } else if (cardsInPlay[0].value < cardsInPlay[1].value) {
             console.log('You lost');
             wrong++;
             $('#computer-score').text(`Computer score: ${wrong}`);
@@ -147,8 +147,7 @@ const deck = $.ajax({
         }
 
 
-        higherBtn.on('click', checkIfHigher)
-        lowerBtn.on('click', checkIfLower)
+
 
 
 
@@ -156,7 +155,11 @@ const deck = $.ajax({
     const drawBtn = $('#draw')
 
      // button event listeners =================
+     // button to draw the next pair of cards
      drawBtn.on('click', draw)
-
+     // button to check if the current card is higher than the hidden card
+     higherBtn.on('click', checkIfHigher)
+     // button to check if the current card is lower than the hidden card
+     lowerBtn.on('click', checkIfLower)
 
 }) //onload ends here
