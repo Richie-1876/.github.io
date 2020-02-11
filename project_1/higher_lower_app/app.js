@@ -61,6 +61,15 @@ $(() => {
 
   })
 
+  // request for deck to be shuffled
+  const shuffle = () => {
+    $.ajax({
+      url: `https://deckofcardsapi.com/api/deck/${deck_id}/shuffle/`
+    }).then((data) => {
+      console.log(data);
+    })
+  }
+
   // function to draw two cards from the deck =======================
 
   const draw = () => {
@@ -173,14 +182,30 @@ $(() => {
   // check win condition function ===============================
   const checkWin = () => {
     if(correct === 5) {
-      $('<p>').text('You Win!!!!!!').appendTo('.scores')
-      console.log('You win');
+      $('<p>').text('You Win!!!!!! Press Reset to start again.').attr('id', 'Win-message').appendTo('.scores')
+
+
+
     } else if (wrong === 5) {
-      $('<p>').text('You Lose!!!!!!').appendTo('.scores')
-      console.log('You lose');
+      $('<p>').text('You Lose!!!!!! Press Reset to start again.').attr('id', 'lose-message').appendTo('.scores')
+
     }
   }
 
+// reset function
+const reset = () => {
+  console.log('clicked');
+  shuffle()
+  correct = 0
+  wrong = 0
+  cardsInPlay = []
+  $('#user-score').text(`Correct: ${correct}`)
+  $('#computer-score').text(`Wrong: ${wrong}`)
+  $('.card').remove()
+  $('#Win-message').remove()
+  $('#lose-message').remove()
+  console.log(correct);
+}
 
 
 
@@ -189,7 +214,13 @@ $(() => {
   // button variables ====================
   const drawBtn = $('#draw')
 
+  const resetBtn = $("#reset")
+
   // button event listeners =================
+
+  // button to reset the game/shufle the deck.
+  resetBtn.on('click', reset)
+
   // button to draw the next pair of cards
   drawBtn.on('click', draw)
   // button to check if the current card is higher than the hidden card
