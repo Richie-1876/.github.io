@@ -47,6 +47,9 @@ $(() => {
   // click function for close button - close the modal
   $closeBtn.on('click', closeModal);
 
+  // set modal to open automatically when page loads.
+  setTimeout(openModal, 2000)
+
 
   // request for deck of cards ==========================
   const deck = $.ajax({
