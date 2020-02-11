@@ -74,7 +74,7 @@ $(() => {
         url: `https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=2`
       }).then((drawData) => {
         console.log(drawData);
-        // library to change string value to integer
+        // dictionary to change string value to integer
         const cardToNumber = {
           "KING": 13,
           "QUEEN": 12,
