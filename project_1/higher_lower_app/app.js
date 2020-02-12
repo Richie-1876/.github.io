@@ -1,5 +1,4 @@
-// console.log('connected');
-// console.log($);
+
 // variable to record correct answers
 let correct = 0
 // variable to record wrong answers
@@ -76,7 +75,6 @@ $(() => {
     // ajax request from shuffled deck for 2 cards
     // check if cards in play array is empty to allow new cards to be drawn.
     if (cardsInPlay.length === 0) {
-
       // remove previous cards from the dom.
       $('.card').remove()
       $.ajax({
@@ -117,9 +115,8 @@ $(() => {
       })
     }
   }
-  // button variables ====================
-  const higherBtn = $('#higher')
-  const lowerBtn = $('#lower')
+
+
 
   // Game functionality ====================================
 
@@ -133,11 +130,6 @@ $(() => {
       cardsInPlay.pop()
       cardsInPlay.pop()
       checkWin()
-      // console.log(cardsInPlay);
-
-
-
-
     } else if (cardsInPlay[0].value > cardsInPlay[1].value) {
       console.log('You lost');
       wrong++;
@@ -145,9 +137,6 @@ $(() => {
       cardsInPlay.pop()
       cardsInPlay.pop()
       checkWin()
-      // console.log(cardsInPlay);
-
-
     } else {
       console.log('Draw');
       cardsInPlay.pop()
@@ -215,6 +204,10 @@ const reset = () => {
   const drawBtn = $('#draw')
 
   const resetBtn = $("#reset")
+
+  const higherBtn = $('#higher')
+
+  const lowerBtn = $('#lower')
 
   // button event listeners =================
 
